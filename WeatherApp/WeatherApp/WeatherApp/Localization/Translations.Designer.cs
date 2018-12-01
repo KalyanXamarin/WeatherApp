@@ -97,6 +97,15 @@ namespace WeatherApp.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Signup.
+        /// </summary>
+        internal static string Label_Signup {
+            get {
+                return ResourceManager.GetString("Label_Signup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to UserName.
         /// </summary>
         internal static string Label_UserName {

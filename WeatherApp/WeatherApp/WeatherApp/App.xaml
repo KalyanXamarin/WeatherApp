@@ -13,6 +13,12 @@
             <Color x:Key="ProgressBarTransperent">#55000000</Color>
             
             <!--Styles-->
+            <!--Inline styles-->
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="TextColor" Value="{StaticResource ColorText}"/>
+            </Style>
+            
             <Style x:Key="NormalEntryStyle" TargetType="Entry">
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="TextColor" Value="{StaticResource ColorText}" />

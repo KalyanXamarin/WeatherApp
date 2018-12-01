@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Screens:BaseView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Screens="clr-namespace:WeatherApp.Views.Shared"
+             xmlns:Translations="clr-namespace:WeatherApp.Extensions"     
+             x:Class="WeatherApp.Views.Registration.SignUpView">
+    <Grid Margin="20,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Entry x:Name="UserNameEntry" Grid.Row="1" Placeholder="{Translations:Translate Label_UserName}" HorizontalOptions="FillAndExpand" Style="{StaticResource NormalEntryStyle}" Text="{Binding UserName}"/>
+        <Entry x:Name="EmailEntry" Grid.Row="2" Placeholder="{Translations:Translate Label_Email}" HorizontalOptions="FillAndExpand" Style="{StaticResource NormalEntryStyle}"  Text="{Binding Email}"/>
+        <Entry x:Name="PasswordEntry" IsPassword="False" Grid.Row="3" Placeholder="{Translations:Translate Label_Password}" HorizontalOptions="FillAndExpand" Style="{StaticResource NormalEntryStyle}" Text="{Binding Password}"/>
+        <Button x:Name="LoginButton" Grid.Row="4" Text="{Translations:Translate Label_Signup}" Style="{StaticResource ButtonPrimaryStyle}" Margin="20" Command="{Binding LoginCommand}"/>
+    </Grid>
+</Screens:BaseView>

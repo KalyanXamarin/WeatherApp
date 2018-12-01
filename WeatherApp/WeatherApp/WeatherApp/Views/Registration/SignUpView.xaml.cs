@@ -11,13 +11,13 @@ using Xamarin.Forms.Xaml;
 namespace WeatherApp.Views.Registration
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class LoginView : BaseView
-    {
-        LoginViewModel _viewModel;
-		public LoginView()
+	public partial class SignUpView : BaseView
+	{
+        SignUpViewModel _viewModel;
+        public SignUpView ()
 		{
 			InitializeComponent ();
-            _viewModel = new LoginViewModel();
+            _viewModel = new SignUpViewModel();
             BindingContext = _viewModel;
             SetBaseViewContext(_viewModel);
         }

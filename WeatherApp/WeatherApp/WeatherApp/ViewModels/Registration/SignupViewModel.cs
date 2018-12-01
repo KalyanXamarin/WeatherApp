@@ -5,19 +5,18 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using WeatherApp.Services.Resgistration;
 using WeatherApp.ViewModels.Shared;
-using WeatherApp.Views;
-using WeatherApp.Views.Registration;
 using Xamarin.Forms;
 
 namespace WeatherApp.ViewModels.Registration
 {
-    public class LoginViewModel : BaseViewModel
+    public class SignUpViewModel : BaseViewModel
     {
-        LoginService loginService;
-        public LoginViewModel()
+        SignUpService signUpService;
+        public SignUpViewModel()
         {
-            loginService = new LoginService();
+            signUpService = new SignUpService();
         }
+
         #region Properties
         string _userName;
         public string UserName
@@ -45,35 +44,37 @@ namespace WeatherApp.ViewModels.Registration
                 RaisePropertyChanged(() => Password);
             }
         }
+        string _email;
+        public string Email
+        {
+            get
+            {
+                return _email;
+            }
+            set
+            {
+                _email = value;
+                RaisePropertyChanged(() => Email);
+            }
+        }
         #endregion
         #region commands
-        public ICommand LoginCommand => new Command(async () => await OnLoginClick());
         public ICommand SignupCommand => new Command(async () => await SignUpClick());
 
 
-        async Task OnLoginClick()
+        async Task SignUpClick()
         {
-            if(!string.IsNullOrEmpty(UserName) && !string.IsNullOrEmpty(Password))
+            if (!string.IsNullOrEmpty(UserName) && !string.IsNullOrEmpty(Password))
             {
                 IsToShowLoader = true;
                 LoadingText = Localization.Translations.Label_LoggingIn;
-                var result = loginService.Login(UserName, Password);
-                if(result.IsSucess)
+                var result = signUpService.StoreUserInfo(new DataBase.Sqlite.UserInfo(UserName, Password, Email));
+                if (result.IsSucess)
                 {
-                    Application.Current.MainPage = new NavigationPage(new HomeView());
-                }
-                else
-                {
-                    //TODO alert
+                    await CurrentView.PopAsync();
                 }
             }
         }
-
-        async Task SignUpClick()
-        {
-            await CurrentView.PushAsync(new SignUpView());
-        }
-
         #endregion
     }
 }

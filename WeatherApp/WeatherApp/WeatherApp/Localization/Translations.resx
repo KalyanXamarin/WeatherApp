@@ -133,6 +133,10 @@
     <value>Password</value>
     <comment>Login page</comment>
   </data>
+  <data name="Label_Signup" xml:space="preserve">
+    <value>Signup</value>
+    <comment>Login page</comment>
+  </data>
   <data name="Label_UserName" xml:space="preserve">
     <value>UserName</value>
     <comment>Login page</comment>

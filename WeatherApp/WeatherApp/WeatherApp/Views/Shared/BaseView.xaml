@@ -24,7 +24,7 @@
                 <Grid Padding="0,0,0,0" BackgroundColor="{StaticResource AppBackgroundColor}">
                     <ContentPresenter HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
                     <!--Infinite progress bar-->
-                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource ProgressBarTransperent}" IsVisible="{TemplateBinding IsToShowLoader}">
+                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource ProgressBarTransperent}" IsVisible="False">
                         <Frame VerticalOptions="Center" HorizontalOptions="Center" CornerRadius="10" OutlineColor="Transparent" HasShadow="false" BackgroundColor="{StaticResource AppBackgroundColor}">
                             <StackLayout Spacing="8" HeightRequest="110" IsVisible="True">
                                 <ActivityIndicator IsRunning="true" Style="{StaticResource SpinnerLoadingStyle}">
