@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeatherApp.Views.Shared.BaseView"
+             ControlTemplate="{StaticResource WeatherAppTemplate}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            
+            <Style x:Key="SpinnerLoadingStyle" TargetType="ActivityIndicator">
+                <Setter Property="Color" Value="{StaticResource PrimaryColor}" />
+                <Setter Property="HeightRequest" Value="30" />
+            </Style>
+
+            <Style x:Key="LabelLoadingStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource ColorText}" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="FontFamily" Value="HelveticaNeue-Bold" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="LineBreakMode" Value="WordWrap" />
+            </Style>
+
+            <ControlTemplate x:Key="WeatherAppTemplate">
+                <Grid Padding="0,0,0,0" BackgroundColor="{StaticResource AppBackgroundColor}">
+                    <ContentPresenter HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                    <!--Infinite progress bar-->
+                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource ProgressBarTransperent}" IsVisible="{TemplateBinding IsToShowLoader}">
+                        <Frame VerticalOptions="Center" HorizontalOptions="Center" CornerRadius="10" OutlineColor="Transparent" HasShadow="false" BackgroundColor="{StaticResource AppBackgroundColor}">
+                            <StackLayout Spacing="8" HeightRequest="110" IsVisible="True">
+                                <ActivityIndicator IsRunning="true" Style="{StaticResource SpinnerLoadingStyle}">
+                                    <ActivityIndicator.Scale>
+                                        <OnPlatform x:TypeArguments="x:Double" iOS="1" Android="0.8" />
+                                    </ActivityIndicator.Scale>
+                                </ActivityIndicator>
+                                <Label Style="{StaticResource LabelLoadingStyle}" Text="{TemplateBinding LoadingText}"/>
+                            </StackLayout>
+                        </Frame>
+                    </Grid>
+                    
+                </Grid>
+            </ControlTemplate>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+       
+    </ContentPage.Content>
+</ContentPage>
