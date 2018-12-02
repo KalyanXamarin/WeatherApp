@@ -65,7 +65,7 @@ namespace WeatherApp.ViewModels.Weather
 
         async Task LoadWeatherInfo()
         {
-            //todo show loader
+            ShowLoader?.Invoke(Localization.Translations.Label_FetchingWeather);
             var data = await weatherService.GetWeatherInfo(selectedCity.Latitude,selectedCity.Longitude);
             if (data.IsSucess)
             {
@@ -73,6 +73,7 @@ namespace WeatherApp.ViewModels.Weather
                 Humidity = $"{data.Result.Main.Humidity} %";
                 Pressure = $"{data.Result.Main.Pressure} mmHg";
             }
+            HideLoader?.Invoke();
         }
     }
 }

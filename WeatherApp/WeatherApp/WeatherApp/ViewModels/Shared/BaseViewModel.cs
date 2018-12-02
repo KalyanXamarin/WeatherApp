@@ -9,40 +9,9 @@ namespace WeatherApp.ViewModels.Shared
 {
     public class BaseViewModel : ExtendedBindableObject
     {
-        public bool _isToShowLoader;
         /// <summary>
-        /// For showing infinite progress(loader) make it is true and vice-versa
+        /// Returns current view and navigation view
         /// </summary>
-        public bool IsToShowLoader
-        {
-            get
-            {
-                return _isToShowLoader;
-            }
-            set
-            {
-                _isToShowLoader = value;
-                RaisePropertyChanged(() => IsToShowLoader);
-            }
-        }
-
-        string _loadingText;
-        /// <summary>
-        /// Displayed along with the progressbar 
-        /// </summary>
-        public string LoadingText
-        {
-            get
-            {
-                return _loadingText;
-            }
-            set
-            {
-                _loadingText = value;
-                RaisePropertyChanged(() => LoadingText);
-            }
-        }
-
         public NavigationPage CurrentView
         {
             get
@@ -50,15 +19,17 @@ namespace WeatherApp.ViewModels.Shared
                 return Application.Current.MainPage as NavigationPage;
             }
         }
-
-       
-
+        #region View intraction delegates
         public Func<string,string,string,Task<bool>> ShowAlertMessage { set; get; }
         public Func<string,string,string,string,Task<bool>> ShowConfirmMessage { set; get; }
+        public Action<string> ShowLoader { set; get; }
+        public Action HideLoader { set; get; }
+        #endregion
         public async Task ShowAlertMessageDialog(string title,string message)
         {
             await ShowAlertMessage?.Invoke(title, message, Localization.Translations.Label_Ok);
         }
+
         public async Task ShowConfirmMessageDialog(string title, string message)
         {
             await ShowConfirmMessage?.Invoke(title, message, Localization.Translations.Label_Ok,Localization.Translations.Label_Cancel);

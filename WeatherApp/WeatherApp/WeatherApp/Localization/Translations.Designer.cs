@@ -106,6 +106,15 @@ namespace WeatherApp.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Fetching weather.
+        /// </summary>
+        internal static string Label_FetchingWeather {
+            get {
+                return ResourceManager.GetString("Label_FetchingWeather", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Humidity.
         /// </summary>
         internal static string Label_Humdity {

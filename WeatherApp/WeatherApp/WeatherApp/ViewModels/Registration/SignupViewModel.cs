@@ -66,9 +66,9 @@ namespace WeatherApp.ViewModels.Registration
         {
             if (!string.IsNullOrEmpty(UserName) && !string.IsNullOrEmpty(Password) && !string.IsNullOrEmpty(Email))
             {
-                IsToShowLoader = true;
-                LoadingText = Localization.Translations.Label_LoggingIn;
+                ShowLoader?.Invoke(Localization.Translations.Label_LoggingIn);
                 var result = signUpService.StoreUserInfo(new DataBase.Sqlite.UserInfo(UserName, Password, Email));
+                HideLoader?.Invoke();
                 if (result.IsSucess)
                 {
                     await CurrentView.PopAsync();

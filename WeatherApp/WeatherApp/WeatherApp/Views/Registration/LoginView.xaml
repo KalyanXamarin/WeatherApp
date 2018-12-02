@@ -7,17 +7,17 @@
              Title="{Translations:Translate Label_Login}"     >
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Entry x:Name="UserNameEntry" Grid.Row="1" Placeholder="{Translations:Translate Label_UserName}" HorizontalOptions="FillAndExpand" Style="{StaticResource NormalEntryStyle}" Margin="20,0,20,0" Text="{Binding UserName}"/>
-            <Entry x:Name="PasswordEntry" IsPassword="True" Grid.Row="2" Placeholder="{Translations:Translate Label_Password}" HorizontalOptions="FillAndExpand" Style="{StaticResource NormalEntryStyle}" Margin="20,0,20,0" Text="{Binding Password}"/>
-            <Button x:Name="LoginButton" Grid.Row="3" Text="{Translations:Translate Label_Login}" Style="{StaticResource ButtonPrimaryStyle}" Margin="20" Command="{Binding LoginCommand}"/>
-            <Grid x:Name="SignupLayout" Grid.Row="5" Margin="0,10" HorizontalOptions="Center" >
+            <Entry x:Name="UserNameEntry" Grid.Row="2" Placeholder="{Translations:Translate Label_UserName}" HorizontalOptions="FillAndExpand" Style="{StaticResource NormalEntryStyle}" Margin="20,0,20,0" Text="{Binding UserName}"/>
+            <Entry x:Name="PasswordEntry" IsPassword="True" Grid.Row="3" Placeholder="{Translations:Translate Label_Password}" HorizontalOptions="FillAndExpand" Style="{StaticResource NormalEntryStyle}" Margin="20,0,20,0" Text="{Binding Password}"/>
+            <Button x:Name="LoginButton" Grid.Row="4" Text="{Translations:Translate Label_Login}" Style="{StaticResource ButtonPrimaryStyle}" Margin="20" Command="{Binding LoginCommand}"/>
+            <Grid x:Name="SignupLayout" Grid.Row="0" Margin="0,0,10,10" HorizontalOptions="End" >
                 <Label x:Name="SignupButton"  Text="{Translations:Translate Label_Signup}" />
                 <Grid.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding SignupCommand}"/>

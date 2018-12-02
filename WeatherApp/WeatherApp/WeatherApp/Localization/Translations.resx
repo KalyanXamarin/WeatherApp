@@ -137,6 +137,10 @@
     <value>Email</value>
     <comment>Register Page</comment>
   </data>
+  <data name="Label_FetchingWeather" xml:space="preserve">
+    <value>Fetching weather</value>
+    <comment>Weather view</comment>
+  </data>
   <data name="Label_Humdity" xml:space="preserve">
     <value>Humidity</value>
     <comment>Weather page</comment>

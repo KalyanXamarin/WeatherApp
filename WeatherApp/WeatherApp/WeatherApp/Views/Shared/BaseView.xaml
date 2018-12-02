@@ -43,9 +43,9 @@
                     </Grid> 
                     <ContentPresenter Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
                     <!--Infinite progress bar-->
-                    <Grid Grid.RowSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource ProgressBarTransperent}" IsVisible="False">
+                    <Grid Grid.RowSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource ProgressBarTransperent}" IsVisible="{TemplateBinding LoadingOverlayIsVisible}">
                         <Frame VerticalOptions="Center" HorizontalOptions="Center" CornerRadius="10" OutlineColor="Transparent" HasShadow="false" BackgroundColor="{StaticResource AppBackgroundColor}">
-                            <StackLayout Spacing="8" HeightRequest="110" IsVisible="True">
+                            <StackLayout Spacing="8" IsVisible="True">
                                 <ActivityIndicator IsRunning="true" Style="{StaticResource SpinnerLoadingStyle}">
                                     <ActivityIndicator.Scale>
                                         <OnPlatform x:TypeArguments="x:Double" iOS="1" Android="0.8" />

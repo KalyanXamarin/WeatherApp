@@ -55,10 +55,10 @@ namespace WeatherApp.ViewModels.Registration
         {
             if(!string.IsNullOrEmpty(UserName) && !string.IsNullOrEmpty(Password))
             {
-                IsToShowLoader = true;
-                LoadingText = Localization.Translations.Label_LoggingIn;
+                ShowLoader?.Invoke(Localization.Translations.Label_LoggingIn);
                 var result = loginService.Login(UserName, Password);
-                if(result.IsSucess)
+                HideLoader?.Invoke();
+                if (result.IsSucess)
                 {
                     Application.Current.MainPage = new NavigationPage(new HomeView());
                 }

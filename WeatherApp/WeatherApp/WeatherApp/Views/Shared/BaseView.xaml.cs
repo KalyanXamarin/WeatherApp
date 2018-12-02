@@ -25,6 +25,8 @@ namespace WeatherApp.Views.Shared
             BindingContext = _viewModel;
             _viewModel.ShowAlertMessage += ShowAlert;
             _viewModel.ShowConfirmMessage += ShowConfirm;
+            _viewModel.ShowLoader += ShowLoader;
+            _viewModel.HideLoader += HideLoader;
         }
 
         #region controlTemplateBindingCode
@@ -34,6 +36,8 @@ namespace WeatherApp.Views.Shared
             await Navigation.PopAsync();
         }
 
+        public bool LoadingOverlayIsVisible { get; set; }
+        public string LoadingText { get; set; }
         #endregion
 
 
@@ -46,6 +50,20 @@ namespace WeatherApp.Views.Shared
         async Task<bool> ShowConfirm(string title, string message, string labelOk,string labelCancel)
         {
             return await DisplayAlert(title, message, labelOk,labelCancel);
+        }
+
+        void ShowLoader(string labelText)
+        {
+            LoadingOverlayIsVisible = true;
+            LoadingText = labelText;
+            OnPropertyChanged(nameof(LoadingText));
+            OnPropertyChanged(nameof(LoadingOverlayIsVisible));
+        }
+
+        void HideLoader()
+        {
+            LoadingOverlayIsVisible = false;
+            OnPropertyChanged(nameof(LoadingOverlayIsVisible));
         }
 
         protected override void OnAppearing()

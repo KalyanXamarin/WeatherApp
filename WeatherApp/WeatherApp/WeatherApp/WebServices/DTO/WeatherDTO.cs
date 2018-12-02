@@ -62,9 +62,9 @@ namespace WeatherApp.WebServices.DTO
         [JsonProperty("temp")]
         public double Temprature { get; set; }
         [JsonProperty("pressure")]
-        public int Pressure { get; set; }
+        public double Pressure { get; set; }
         [JsonProperty("humidity")]
-        public int Humidity { get; set; }
+        public double Humidity { get; set; }
         [JsonProperty("temp_min")]
         public double Temp_min { get; set; }
         [JsonProperty("temp_max")]
