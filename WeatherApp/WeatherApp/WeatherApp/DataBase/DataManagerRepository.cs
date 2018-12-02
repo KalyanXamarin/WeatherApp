@@ -60,7 +60,7 @@ namespace WeatherApp.DataBase
             try
             {
                 var userInfoManager = new AbstractDataManager<UserInfo>(_connection);
-                userInfoManager.Get();
+                return userInfoManager.Get();
             }
             catch (Exception ex)
             {

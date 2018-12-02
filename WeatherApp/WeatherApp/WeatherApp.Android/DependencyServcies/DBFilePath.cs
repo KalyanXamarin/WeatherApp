@@ -11,7 +11,9 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using WeatherApp.DependencyServices;
+using WeatherApp.Droid.DependencyServcies;
 
+[assembly: Xamarin.Forms.Dependency(typeof(DBFilePath))]
 namespace WeatherApp.Droid.DependencyServcies
 {
     public class DBFilePath : IDBFilePath

@@ -7,8 +7,7 @@ namespace WeatherApp.DataBase
 {
     public class DBObject
     {
-        [PrimaryKey]
-        public virtual string Id
+        public int ID
         {
             get;
             set;

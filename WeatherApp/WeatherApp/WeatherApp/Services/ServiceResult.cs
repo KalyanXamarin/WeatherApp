@@ -9,6 +9,10 @@ namespace WeatherApp.Services
         public bool IsSucess { get; set; }
         public string ErrorMessage { get; set; }
         public T Result { get; set; }
+        public ServiceResult()
+        {
+
+        }
         public ServiceResult(bool isSucess,string errorMessage,T result)
         {
             IsSucess = isSucess;

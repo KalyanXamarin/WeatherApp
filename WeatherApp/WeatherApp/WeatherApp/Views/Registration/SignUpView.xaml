@@ -15,7 +15,7 @@
         </Grid.RowDefinitions>
         <Entry x:Name="UserNameEntry" Grid.Row="1" Placeholder="{Translations:Translate Label_UserName}" HorizontalOptions="FillAndExpand" Style="{StaticResource NormalEntryStyle}" Text="{Binding UserName}"/>
         <Entry x:Name="EmailEntry" Grid.Row="2" Placeholder="{Translations:Translate Label_Email}" HorizontalOptions="FillAndExpand" Style="{StaticResource NormalEntryStyle}"  Text="{Binding Email}"/>
-        <Entry x:Name="PasswordEntry" IsPassword="False" Grid.Row="3" Placeholder="{Translations:Translate Label_Password}" HorizontalOptions="FillAndExpand" Style="{StaticResource NormalEntryStyle}" Text="{Binding Password}"/>
-        <Button x:Name="LoginButton" Grid.Row="4" Text="{Translations:Translate Label_Signup}" Style="{StaticResource ButtonPrimaryStyle}" Margin="20" Command="{Binding LoginCommand}"/>
+        <Entry x:Name="PasswordEntry" IsPassword="True" Grid.Row="3" Placeholder="{Translations:Translate Label_Password}" HorizontalOptions="FillAndExpand" Style="{StaticResource NormalEntryStyle}" Text="{Binding Password}"/>
+        <Button x:Name="SignupButton" Grid.Row="4" Text="{Translations:Translate Label_Signup}" Style="{StaticResource ButtonPrimaryStyle}" Margin="20" Command="{Binding SignupCommand}"/>
     </Grid>
 </Screens:BaseView>
