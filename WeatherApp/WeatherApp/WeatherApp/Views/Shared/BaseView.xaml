@@ -4,11 +4,16 @@
              x:Class="WeatherApp.Views.Shared.BaseView"
              ControlTemplate="{StaticResource WeatherAppTemplate}">
     <ContentPage.Resources>
+        
         <ResourceDictionary>
             
             <Style x:Key="SpinnerLoadingStyle" TargetType="ActivityIndicator">
                 <Setter Property="Color" Value="{StaticResource PrimaryColor}" />
                 <Setter Property="HeightRequest" Value="30" />
+            </Style>
+            <Style TargetType="Grid">
+                <Setter Property="RowSpacing" Value="0"/>
+                <Setter Property="ColumnSpacing" Value="0"/>
             </Style>
 
             <Style x:Key="LabelLoadingStyle" TargetType="Label">
@@ -22,9 +27,23 @@
 
             <ControlTemplate x:Key="WeatherAppTemplate">
                 <Grid Padding="0,0,0,0" BackgroundColor="{StaticResource AppBackgroundColor}">
-                    <ContentPresenter HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <!--Title layout-->
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="BackButton" Grid.Column="0" Margin="15,0,0,0" VerticalOptions="Center" Style="{StaticResource ButtonNavigation}" Command="{TemplateBinding ButtonBackCommand}" Image="Arrow_back" HorizontalOptions="Start"/>
+                        <Label x:Name="TitleLabel" Grid.Column="1" Style="{StaticResource TitleLabelStyle}" Margin="0,20" Text="{TemplateBinding Title}"/>
+                    </Grid> 
+                    <ContentPresenter Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
                     <!--Infinite progress bar-->
-                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource ProgressBarTransperent}" IsVisible="False">
+                    <Grid Grid.RowSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource ProgressBarTransperent}" IsVisible="False">
                         <Frame VerticalOptions="Center" HorizontalOptions="Center" CornerRadius="10" OutlineColor="Transparent" HasShadow="false" BackgroundColor="{StaticResource AppBackgroundColor}">
                             <StackLayout Spacing="8" HeightRequest="110" IsVisible="True">
                                 <ActivityIndicator IsRunning="true" Style="{StaticResource SpinnerLoadingStyle}">

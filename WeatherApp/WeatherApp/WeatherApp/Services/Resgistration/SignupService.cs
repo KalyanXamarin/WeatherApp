@@ -17,7 +17,7 @@ namespace WeatherApp.Services.Resgistration
             }
             else
             {
-                return new ServiceResult<UserInfo>(false, "Error occured while storing the account");
+                return new ServiceResult<UserInfo>(false, Localization.Translations.Label_UserExists);
             }
         }
     }

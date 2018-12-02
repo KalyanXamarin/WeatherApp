@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Screens:BaseView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Screens="clr-namespace:WeatherApp.Views.Shared"
+             xmlns:Translations="clr-namespace:WeatherApp.Extensions"
+             x:Class="WeatherApp.Views.Weather.WeatherView">
+    <StackLayout Margin="20" Spacing="0">
+        <StackLayout.Resources>
+            <ResourceDictionary>
+                <Style x:Key="LabelHeaderStyle" TargetType="Label">
+                    <Setter Property="FontAttributes" Value="Bold" />
+                    <Setter Property="TextColor" Value="{StaticResource ColorHint}" />
+                    <Setter Property="FontSize" Value="15" />
+                </Style>
+                <Style x:Key="LabelValueStyle" TargetType="Label">
+                    <Setter Property="FontAttributes" Value="Bold" />
+                    <Setter Property="TextColor" Value="{StaticResource PrimaryColor}" />
+                    <Setter Property="FontSize" Value="20" />
+                </Style>
+            </ResourceDictionary>
+        </StackLayout.Resources>
+        <Label x:Name="TemparatureLabel" Text="{Translations:Translate Label_Temparature}" Style="{StaticResource LabelHeaderStyle}"/>
+        <Label x:Name="TemratureValue" Style="{StaticResource LabelValueStyle}" Margin="0,0,0,10" Text="{Binding Temparature}"/>
+        <Label x:Name="PressureLabel" Text="{Translations:Translate Label_Pressure}" Style="{StaticResource LabelHeaderStyle}"/>
+        <Label x:Name="PressureValue" Style="{StaticResource LabelValueStyle}" Margin="0,0,0,10" Text="{Binding Pressure}"/>
+        <Label x:Name="HumidityLabel" Text="{Translations:Translate Label_Humdity}" Style="{StaticResource LabelHeaderStyle}"/>
+        <Label x:Name="HumidityValue" Style="{StaticResource LabelValueStyle}" Margin="0,0,0,10" Text="{Binding Humidity}"/>
+    </StackLayout>
+</Screens:BaseView>

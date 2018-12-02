@@ -10,10 +10,10 @@ namespace WeatherApp.Services.Home
 {
     public class WeatherService
     {
-        public async Task GetWeatherInfo(double latitude,double longitude)
+        public async Task<ServiceResult<WeatherDTO>> GetWeatherInfo(double latitude,double longitude)
         {
             var serviceCall = new ServiceRepository<WeatherDTO>(GlobalConstants.ServiceHost, $"/weather?lat={latitude}&lon={longitude}&appid={GlobalConstants.API_KEY}");
-            var result = await serviceCall.GetRequest();
+            return await serviceCall.GetRequest();
         }
     }
 }

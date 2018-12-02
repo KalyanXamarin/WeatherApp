@@ -64,8 +64,12 @@ namespace WeatherApp.ViewModels.Registration
                 }
                 else
                 {
-                    //TODO alert
+                   await ShowAlertMessageDialog(Localization.Translations.Label_Alert, result.ErrorMessage);
                 }
+            }
+            else
+            {
+                await ShowAlertMessageDialog(Localization.Translations.Label_Alert, Localization.Translations.Label_LoginEmptyMessage);
             }
         }
 

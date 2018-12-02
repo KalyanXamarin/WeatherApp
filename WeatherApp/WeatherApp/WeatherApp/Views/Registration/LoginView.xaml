@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:Screens="clr-namespace:WeatherApp.Views.Shared"
              xmlns:Translations="clr-namespace:WeatherApp.Extensions"
-             x:Class="WeatherApp.Views.Registration.LoginView">
+             x:Class="WeatherApp.Views.Registration.LoginView"
+             Title="{Translations:Translate Label_Login}"     >
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>

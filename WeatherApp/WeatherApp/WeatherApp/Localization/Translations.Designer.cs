@@ -61,11 +61,65 @@ namespace WeatherApp.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Alert.
+        /// </summary>
+        internal static string Label_Alert {
+            get {
+                return ResourceManager.GetString("Label_Alert", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        internal static string Label_Cancel {
+            get {
+                return ResourceManager.GetString("Label_Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cities.
+        /// </summary>
+        internal static string Label_Cities {
+            get {
+                return ResourceManager.GetString("Label_Cities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Message.
+        /// </summary>
+        internal static string Label_Confirm {
+            get {
+                return ResourceManager.GetString("Label_Confirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Email.
         /// </summary>
         internal static string Label_Email {
             get {
                 return ResourceManager.GetString("Label_Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Humidity.
+        /// </summary>
+        internal static string Label_Humdity {
+            get {
+                return ResourceManager.GetString("Label_Humdity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please enter valid credetilas.
+        /// </summary>
+        internal static string Label_InvalidCredentials {
+            get {
+                return ResourceManager.GetString("Label_InvalidCredentials", resourceCulture);
             }
         }
         
@@ -88,11 +142,38 @@ namespace WeatherApp.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please fill username and password.
+        /// </summary>
+        internal static string Label_LoginEmptyMessage {
+            get {
+                return ResourceManager.GetString("Label_LoginEmptyMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ok.
+        /// </summary>
+        internal static string Label_Ok {
+            get {
+                return ResourceManager.GetString("Label_Ok", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password.
         /// </summary>
         internal static string Label_Password {
             get {
                 return ResourceManager.GetString("Label_Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pressure.
+        /// </summary>
+        internal static string Label_Pressure {
+            get {
+                return ResourceManager.GetString("Label_Pressure", resourceCulture);
             }
         }
         
@@ -106,11 +187,47 @@ namespace WeatherApp.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please fill all fields.
+        /// </summary>
+        internal static string Label_SignupEmptyMessage {
+            get {
+                return ResourceManager.GetString("Label_SignupEmptyMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Temparature.
+        /// </summary>
+        internal static string Label_Temparature {
+            get {
+                return ResourceManager.GetString("Label_Temparature", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User name alreay exists.
+        /// </summary>
+        internal static string Label_UserExists {
+            get {
+                return ResourceManager.GetString("Label_UserExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to UserName.
         /// </summary>
         internal static string Label_UserName {
             get {
                 return ResourceManager.GetString("Label_UserName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Weather.
+        /// </summary>
+        internal static string Label_Weather {
+            get {
+                return ResourceManager.GetString("Label_Weather", resourceCulture);
             }
         }
     }

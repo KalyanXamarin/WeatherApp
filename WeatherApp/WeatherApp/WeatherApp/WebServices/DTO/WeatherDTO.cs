@@ -42,7 +42,7 @@ namespace WeatherApp.WebServices.DTO
         [JsonProperty("sunrise")]
         public int Sunrise { get; set; }
         [JsonProperty("sunset")]
-        public int Sunset { get; set; }
+        public int SunSet { get; set; }
     }
 
     public class WeatherInfoDTO
@@ -76,12 +76,12 @@ namespace WeatherApp.WebServices.DTO
         [JsonProperty("speed")]
         public double Speed { get; set; }
         [JsonProperty("deg")]
-        public int Degree { get; set; }
+        public double Degree { get; set; }
     }
 
     public class CloudsDTO
     {
         [JsonProperty("all")]
-        public int All { get; set; }
+        public double All { get; set; }
     }
 }

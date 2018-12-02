@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WeatherApp.Models;
 using WeatherApp.ViewModels;
 using WeatherApp.Views.Shared;
+using WeatherApp.Views.Weather;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -20,7 +22,15 @@ namespace WeatherApp.Views
             _viewModel = new HomeViewModel();
             BindingContext = _viewModel;
             SetBaseViewContext(_viewModel);
-            _viewModel.LoadWeatherInfoCommand.Execute(null);
+            CitiesListView.ItemsSource = _viewModel.CitiesList;
+            CitiesListView.ItemTapped += CitiesListView_ItemTapped;
         }
-	}
+
+        private void CitiesListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            CitiesListView.SelectedItem = null;
+            var selectedItem = (CitiesModel)e.Item;
+            Navigation.PushAsync(new WeatherView(selectedItem));
+        }
+    }
 }

@@ -20,7 +20,7 @@ namespace WeatherApp.Services.Resgistration
             }
             else
             {
-                return new ServiceResult<UserInfo>(false,"Please enter valid credetilas");
+                return new ServiceResult<UserInfo>(false,Localization.Translations.Label_InvalidCredentials);
             }
         }
     }

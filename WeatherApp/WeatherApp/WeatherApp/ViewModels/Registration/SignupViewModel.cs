@@ -64,7 +64,7 @@ namespace WeatherApp.ViewModels.Registration
 
         async Task SignUpClick()
         {
-            if (!string.IsNullOrEmpty(UserName) && !string.IsNullOrEmpty(Password))
+            if (!string.IsNullOrEmpty(UserName) && !string.IsNullOrEmpty(Password) && !string.IsNullOrEmpty(Email))
             {
                 IsToShowLoader = true;
                 LoadingText = Localization.Translations.Label_LoggingIn;
@@ -73,6 +73,14 @@ namespace WeatherApp.ViewModels.Registration
                 {
                     await CurrentView.PopAsync();
                 }
+                else
+                {
+                    await ShowAlertMessageDialog(Localization.Translations.Label_Alert, result.ErrorMessage);
+                }
+            }
+            else
+            {
+                await ShowAlertMessageDialog(Localization.Translations.Label_Alert, Localization.Translations.Label_SignupEmptyMessage);
             }
         }
         #endregion
